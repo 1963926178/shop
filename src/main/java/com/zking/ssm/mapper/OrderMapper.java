@@ -1,9 +1,7 @@
 package com.zking.ssm.mapper;
 
 import com.zking.ssm.model.Order;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface OrderMapper {
     int deleteByPrimaryKey(Integer orderId);
 
@@ -16,6 +14,4 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);
-
-    Order loadOrder(Order order);
 }

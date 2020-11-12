@@ -1,32 +1,67 @@
 package com.zking.ssm.model;
 
-import lombok.Data;
+import java.util.Date;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
-
-@Data
-public class User implements Serializable {
-
-    public static interface ValidateGroups{
-        public static interface Login{
-
-        }
-
-        public static interface Reg{
-
-        }
-    }
-
+public class User {
     private Integer userId;
-    @NotBlank(message = "用户名不能为空",groups = {User.ValidateGroups.Login.class,User.ValidateGroups.Reg.class})
+
     private String userName;
 
-    @NotBlank(message = "密码不能为空",groups = {User.ValidateGroups.Login.class,User.ValidateGroups.Reg.class})
-    private String password;
+    private String userPassword;
 
-    @NotBlank(message = "密码不能为空",groups = {User.ValidateGroups.Reg.class})
-    private String password2;
+    private String userSex;
 
+    private Date userBirthday;
+
+    public User(Integer userId, String userName, String userPassword, String userSex, Date userBirthday) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userSex = userSex;
+        this.userBirthday = userBirthday;
+    }
+
+    public User() {
+        super();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public String getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
+    }
+
+    public Date getUserBirthday() {
+        return userBirthday;
+    }
+
+    public void setUserBirthday(Date userBirthday) {
+        this.userBirthday = userBirthday;
+    }
 }

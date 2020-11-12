@@ -1,31 +1,19 @@
 package com.zking.ssm.model;
 
-import lombok.ToString;
-
-import java.io.Serializable;
-
-@ToString
-public class Order implements Serializable {
+public class Order {
     private Integer orderId;
 
-    private String orderNo;
+    private Float orderSum;
 
-    private Integer cid;
+    private Integer orderState;
 
-    private Customer customer;
+    private Integer userId;
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Order(Integer orderId, String orderNo, Integer cid) {
+    public Order(Integer orderId, Float orderSum, Integer orderState, Integer userId) {
         this.orderId = orderId;
-        this.orderNo = orderNo;
-        this.cid = cid;
+        this.orderSum = orderSum;
+        this.orderState = orderState;
+        this.userId = userId;
     }
 
     public Order() {
@@ -40,19 +28,27 @@ public class Order implements Serializable {
         this.orderId = orderId;
     }
 
-    public String getOrderNo() {
-        return orderNo;
+    public Float getOrderSum() {
+        return orderSum;
     }
 
-    public void setOrderNo(String orderNo) {
-        this.orderNo = orderNo;
+    public void setOrderSum(Float orderSum) {
+        this.orderSum = orderSum;
     }
 
-    public Integer getCid() {
-        return cid;
+    public Integer getOrderState() {
+        return orderState;
     }
 
-    public void setCid(Integer cid) {
-        this.cid = cid;
+    public void setOrderState(Integer orderState) {
+        this.orderState = orderState;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }
