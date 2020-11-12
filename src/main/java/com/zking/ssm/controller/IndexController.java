@@ -16,6 +16,13 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/wall")
+    public String toWall(){
+        System.out.println("墙壁wall");
+        return "wall";
+    }
+
+
     @RequestMapping("/sys/i18n")
     public String i18n(String local, HttpSession session){
         if("zh".equals(local)){

@@ -31,8 +31,10 @@
 
     <!--4) 单独处理图片、样式、js等资源 -->
     <mvc:resources location="/css/" mapping="/css/**"/>
-    <mvc:resources location="/images/" mapping="/images/**"/>
+    <mvc:resources location="/img/" mapping="/img/**"/>
     <mvc:resources location="/js/" mapping="/js/**"/>
+
+
 
 
     <!--1) 配置国际化资源文件 -->

@@ -26,7 +26,7 @@ public class FileServiceImplTest extends BaseTestCase {
         String fileId = UUID.randomUUID().toString().replace("-","");
         String realName = "翔哥自拍1.jpg";
         String str  = realName.substring(realName.lastIndexOf("."));
-        String contentType="jpg/png/jpeg/img";
+        String contentType="jpg/png/jpeg${ctx}/img";
         String url = "E:\\图片\\作业\\"+System.currentTimeMillis()+str;
 
         file = new File(fileId,realName,contentType,url);
