@@ -7,18 +7,32 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:include page="/common/head.jsp"></jsp:include>
 <html>
 <head>
-    <jsp:include page="/common/head.jsp"></jsp:include>
+    <meta charset="UTF-8">
     <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="${ctx}/css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="${ctx}/css/login.css"/>
 </head>
 <body>
-    <h1>用户注册,ts=<%=System.currentTimeMillis()%></h1>
-    <f:form modelAttribute="user" action="${ctx}/user/toReg">
-        用户名:<f:input path="userName"/><f:errors path="userName"/> <br>
-        密码:<f:input path="password"/><f:errors path="password"/><br>
-        密码:<f:input path="password2"/><f:errors path="password2"/><br>
-        <input type="submit" value="提交">
-    </f:form>
+<!-------------------reg-------------------------->
+<div class="reg">
+    <form action="#" method="post">
+        <h1><a href="index.html"><img src="${ctx}/img/temp/logo.png"></a></h1>
+        <p>用户注册</p>
+        <p><input type="text" name="" value="" placeholder="请输入邮箱"></p>
+        <p><input type="text" name="" value="" placeholder="请输入密码"></p>
+        <p><input type="text" name="" value="" placeholder="请确认密码"></p>
+        <p class="txtL txt"><input class="code" type="text" name="" value="" placeholder="验证码"><img
+                src="${ctx}/img/temp/code.jpg"></p>
+        <p><input type="submit" name="" value="注册"></p>
+        <p class="txtL txt">完成此注册，即表明您同意了我们的<a href="#">
+            <使用条款和隐私策略>
+        </a></p>
+        <p class="txt"><a href="${ctx}/user/toLogin"><span></span>已有账号登录</a></p>
+<%--      <a href="#" class="off"><img src="${ctx}/img/temp/off.png"></a>--%>
+    </form>
+</div>
 </body>
-</html>
+
