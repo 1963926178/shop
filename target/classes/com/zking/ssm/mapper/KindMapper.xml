@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.ssm.mapper.KindMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.ssm.model.Kind" >
+    <constructor >
+      <idArg column="kind_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="kind_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="kind_picture" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="kind_price" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="kind_sum" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="kind_outsum" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="kind_state" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="goods_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    kind_id, kind_name, kind_picture, kind_price, kind_sum, kind_outsum, kind_state, 
+    goods_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_kind
+    where kind_id = #{kindId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_kind
+    where kind_id = #{kindId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.ssm.model.Kind" >
+    insert into t_kind (kind_id, kind_name, kind_picture, 
+      kind_price, kind_sum, kind_outsum, 
+      kind_state, goods_id)
+    values (#{kindId,jdbcType=INTEGER}, #{kindName,jdbcType=VARCHAR}, #{kindPicture,jdbcType=VARCHAR}, 
+      #{kindPrice,jdbcType=VARCHAR}, #{kindSum,jdbcType=VARCHAR}, #{kindOutsum,jdbcType=VARCHAR}, 
+      #{kindState,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.ssm.model.Kind" >
+    insert into t_kind
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="kindId != null" >
+        kind_id,
+      </if>
+      <if test="kindName != null" >
+        kind_name,
+      </if>
+      <if test="kindPicture != null" >
+        kind_picture,
+      </if>
+      <if test="kindPrice != null" >
+        kind_price,
+      </if>
+      <if test="kindSum != null" >
+        kind_sum,
+      </if>
+      <if test="kindOutsum != null" >
+        kind_outsum,
+      </if>
+      <if test="kindState != null" >
+        kind_state,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="kindId != null" >
+        #{kindId,jdbcType=INTEGER},
+      </if>
+      <if test="kindName != null" >
+        #{kindName,jdbcType=VARCHAR},
+      </if>
+      <if test="kindPicture != null" >
+        #{kindPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="kindPrice != null" >
+        #{kindPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="kindSum != null" >
+        #{kindSum,jdbcType=VARCHAR},
+      </if>
+      <if test="kindOutsum != null" >
+        #{kindOutsum,jdbcType=VARCHAR},
+      </if>
+      <if test="kindState != null" >
+        #{kindState,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.ssm.model.Kind" >
+    update t_kind
+    <set >
+      <if test="kindName != null" >
+        kind_name = #{kindName,jdbcType=VARCHAR},
+      </if>
+      <if test="kindPicture != null" >
+        kind_picture = #{kindPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="kindPrice != null" >
+        kind_price = #{kindPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="kindSum != null" >
+        kind_sum = #{kindSum,jdbcType=VARCHAR},
+      </if>
+      <if test="kindOutsum != null" >
+        kind_outsum = #{kindOutsum,jdbcType=VARCHAR},
+      </if>
+      <if test="kindState != null" >
+        kind_state = #{kindState,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where kind_id = #{kindId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.ssm.model.Kind" >
+    update t_kind
+    set kind_name = #{kindName,jdbcType=VARCHAR},
+      kind_picture = #{kindPicture,jdbcType=VARCHAR},
+      kind_price = #{kindPrice,jdbcType=VARCHAR},
+      kind_sum = #{kindSum,jdbcType=VARCHAR},
+      kind_outsum = #{kindOutsum,jdbcType=VARCHAR},
+      kind_state = #{kindState,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER}
+    where kind_id = #{kindId,jdbcType=INTEGER}
+  </update>
+</mapper>

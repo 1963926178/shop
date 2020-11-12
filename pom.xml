@@ -147,8 +147,7 @@
         <!--</dependency>-->
 
 
-        <!-- ********************** junit
-    单元测试依赖 ********************** -->
+        <!-- ********************** junit单元测试依赖 ********************** -->
         <dependency>
             <groupId>junit</groupId>
 
@@ -167,8 +166,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- **********************
-    Mybatis依赖 ********************** -->
+        <!-- ********************** Mybatis依赖 ********************** -->
         <!--1) mybatis核心 -->
         <dependency>
 
@@ -226,8 +224,7 @@
             <version>1.1.2</version>
         </dependency>
 
-        <!-- ********************** Mysql
-    JDBC驱动 ********************** -->
+        <!-- ********************** Mysql JDBC驱动 ********************** -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
